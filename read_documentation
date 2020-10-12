@@ -1,0 +1,65 @@
+---------------------run command------------------
+
+npm i ng2-charts
+
+npm i charts.js
+
+
+--------------------Import in module.ts-----------------------
+import { ChartsModule } from 'ng2-charts';                                                  // No need to import chart.js module in module.ts
+
+
+------------------------------Import in component.ts-----------------------------
+
+import { ChartOptions, ChartType, ChartDataSets } from 'chart.js';
+import { Label } from 'ng2-charts';
+
+
+
+------------------------------Keep this in class of component.ts-----------------------------
+public barChartOptions: ChartOptions = {
+    responsive: true,
+  };
+  public barChartLabels: Label[] = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'June', 'Jul'];
+  public barChartType: ChartType = 'bar';
+ 
+  public barChartLegend = true;
+  public barChartPlugins = [];
+
+  public barChartData: ChartDataSets[] = [
+    { data: [65, 59, 80, 81, 56, 55, 40], label: 'Orders', backgroundColor: 'red' },
+    { data: [28, 48, 40, 19, 86, 27, 90], label: 'Deliveries',  backgroundColor: 'green' }
+  ];
+  
+
+
+
+
+
+
+--------------------------------Tips for some Cutomized Charts----------------------------------
+
+Important Note 1______ For Line Charts:   if you are using Horizontal Bar Chart then 
+
+--------------------------------keep following code on place----------------------------------
+public barChartType: ChartType = 'horizontalBar';
+  
+  
+  
+  
+Important Note 2:_______For Line Charts:   if you are using line chart...   and want to cutomize it to the line chart without curves (line tension: 0) then 
+
+--------------------------------keep following code on place----------------------------------
+
+  public lineChartOptions: (ChartOptions) = {
+    responsive: true,
+    elements: {
+      line: {
+        tension: 0,
+      }
+    },
+  };
+  
+  
+  
+  
