@@ -47,7 +47,35 @@ public barChartType: ChartType = 'horizontalBar';
   
   
   
-Important Note 2:_______For Line Charts:   if you are using line chart...   and want to cutomize it to the line chart without curves (line tension: 0) then 
+ Important Note 2______ For Doughnut Charts:   if you are using  Doughnut Bar Chart with custom colors then 
+
+--------------------------------keep following code on component.ts----------------------------------
+private donutColors=[
+    {
+      backgroundColor: [
+        '#01253d',
+        'rgba(118, 183, 172, 1)',
+        '#3a5465'
+    ]
+    }
+  ];
+  
+  and add  [colors]="donutColors"  in conponent.html
+  Example: 
+  
+  <canvas baseChart 
+     [colors]="donutColors"
+     [data]="doughnutChartData"
+     [labels]="doughnutChartLabels"
+     [chartType]="doughnutChartType">
+  </canvas>
+
+
+
+
+
+  
+Important Note 3:_______For Line Charts:   if you are using line chart...   and want to cutomize it to the line chart without curves (line tension: 0) then 
 
 --------------------------------keep following code on place----------------------------------
 
