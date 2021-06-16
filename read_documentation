@@ -78,7 +78,14 @@ private donutColors=[
 Important Note 3:_______For Line Charts:   if you are using line chart...   and want to cutomize it to the line chart without curves (line tension: 0) then 
 
 --------------------------------keep following code on place----------------------------------
-
+public lineChartData: ChartDataSets[] = [
+    { data: [65, 59, 80, 81, 56, 55, 40], label: 'Series A', pointBackgroundColor: "red", lineTension: 0 },
+    
+  ];
+  
+  or -------------------
+  
+  
   public lineChartOptions: (ChartOptions) = {
     responsive: true,
     elements: {
